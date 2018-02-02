@@ -6,6 +6,8 @@ echo "Thank you for using Isaac Helbling's SheepIt CLI!"
 echo Version: $version
 echo ''
 
+
+
 # Set defaults
 ui='text'
 user=''
@@ -18,6 +20,8 @@ fi
 
 # Overwrite with user-specified values
 source ./sheepit_config.sh
+
+
 
 # Initialize option variables
 

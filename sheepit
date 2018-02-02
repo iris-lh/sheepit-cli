@@ -116,12 +116,12 @@ then
   ui_option="-ui ${ui}"
 fi
 
-
-
 # Check username, prompt if none
+user_option=''
 if [ ! -z $user ]
 then
   echo '          'Username: $user
+  user_option="-login ${user}"
   echo ''
 else
   echo ''
@@ -129,11 +129,29 @@ else
   read user
 fi
 
-# Get password
+# Prompt password
 printf 'Password: '
 read -s pass
+pass_option="-password ${pass}"
 
 
 
-# Start Sheepit
-# java -jar ~/$HOME/bin/sheepit-client-5.590.2883.jar -login $user -password $pass
+# Concat options
+options=''
+options+=$user_option' '
+options+=$pass_option' '
+options+=$cache_dir_option' '
+options+=$compute_method_option' '
+options+=$config_option' '
+options+=$cores_option' '
+options+=$extras_option' '
+options+=$gpu_option' '
+options+=$priority_option' '
+options+=$proxy_option' '
+options+=$rendertime_option' '
+options+=$request_time_option' '
+options+=$server_option' '
+options+=$ui_option' '
+
+# Start SheepIt
+java -jar $jar_path $options

@@ -46,4 +46,4 @@ Happy rendering, I hope this CLI saves you as much headache as it saves me!
 
 My SheepIt profile: [imhelbling](https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling)
 
-**Coming soon:** easy installation
+**Coming soon:** easy installation, option validation

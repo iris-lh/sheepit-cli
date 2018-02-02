@@ -1,6 +1,6 @@
 # SheepIt CLI
 
-This command line interface makes it easy and painless to run SheepIt Render-Farm across multiple machines with different setups and hardware specs.
+This command line interface makes it easy and painless to run SheepIt Render-Farm across multiple machines with different setups and hardware specs. No more obnoxiously long commands!
 
 ### Configuration
 This CLI can use config files to load options to feed into the SheepIt jar. These config options include most of the jar's command line options, plus options for logging and specifying paths.
@@ -35,3 +35,5 @@ server=[address]
 ```
 
 If you're wondering about the password, this CLI will always prompt with an obfuscated field so that your password never has to be stored.
+
+Happy rendering, I hope this CLI saves you as much headache as it saves me!

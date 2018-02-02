@@ -42,7 +42,9 @@ If you're wondering about the password, this CLI will always prompt with an obfu
 
 ---
 
-Happy rendering, I hope this CLI saves you as much headache as it saves me!
+### Happy rendering!
+
+I hope this CLI saves you as much headache as it saves me. :blush:
 
 My SheepIt profile: [imhelbling](https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling)
 

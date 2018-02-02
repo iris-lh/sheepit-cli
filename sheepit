@@ -9,6 +9,7 @@ BOLD='\033[1m'
 RESET_BOLD='\033[21m'
 UNDERLINE='\033[4m'
 RESET_UNDERLINE='\033[24m'
+DIM='\033[2m'
 
 CYAN='\033[36m'
 LIGHT_CYAN='\033[96m'
@@ -29,18 +30,57 @@ log_path="sheepit_$(date +%Y-%m-%d-%H-%M-%S).log"
 echo $log_path
 
 # Set defaults
+jar_path=$HOME/bin/sheepit-client-5.590.2883.jar
+home_config="${HOME}/.sheepit_cli_config"
+local_config="${PWD}/.sheepit_cli_config"
+log_dir=$HOME/.sheepit_logs
+
 ui='text'
 user=''
 pass=''
-jar_path=$HOME/bin/sheepit-client-5.590.2883.jar
-if [ ! -z $jar_path ]
-then
-  echo -e $BOLD'       'SheepIt Jar:${RESET_STYLE} $jar_path
-fi
+cache_dir=''
+compute_method=''
+config=''
+extras=''
+gpu=''
+memory=''
+priority=''
+proxy=''
+rendertime=''
+request_time=''
+server=''
+
+ui_option=''
+user_option=''
+pass_option=''
+cache_dir_option=''
+compute_method_option=''
+config_option=''
+extras_option=''
+gpu_option=''
+memory_option=''
+priority_option=''
+proxy_option=''
+rendertime_option=''
+request_time_option=''
+server_option=''
+
 
 # Overwrite with user-specified values
-# TODO check for config in current dir, and check if files exist
-source $HOME/.sheepit_cli_config
+
+if [ -e $home_config ]
+then
+  echo -e "${DIM}Found configuration file at '${home_config}'${RESET_STYLE}"
+  source $home_config
+fi
+
+if [ -e $local_config ]
+then
+  echo -e "${DIM}Found configuration file at '${local_config}'${RESET_STYLE}"
+  source $local_config
+fi
+
+echo ''
 
 
 

@@ -26,8 +26,6 @@ echo -e "${CYAN}    Source code: ${UNDERLINE}https://github.com/isaachelbling/sh
 echo -e "${CYAN}SheepIt Profile: ${UNDERLINE}https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling"${RESET_STYLE}
 echo ''
 
-log_path="sheepit_$(date +%Y-%m-%d-%H-%M-%S).log"
-echo $log_path
 
 # Set defaults
 jar_path=$HOME/bin/sheepit-client-5.590.2883.jar
@@ -83,8 +81,12 @@ fi
 echo ''
 
 
+# Initialize and display option variables
 
-# Initialize option variables
+if [ ! -z $jar_path ]
+then
+  echo -e $BOLD'       'SheepIt Jar:${RESET_STYLE} $jar_path
+fi
 
 cache_dir_option=''
 if [ ! -z $cache_dir ]

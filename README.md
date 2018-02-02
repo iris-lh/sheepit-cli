@@ -1,11 +1,15 @@
 # SheepIt CLI
 
-This command line interface makes it easy and painless to run SheepIt Render-Farm across multiple machines with different setups and hardware specs. No more obnoxiously long commands!
+This command line interface makes it easy and painless to run the [SheepIt Render-Farm](https://www.sheepit-renderfarm.com/) client in the command line across multiple machines with different setups and hardware specs. No more obnoxiously long commands!
+
+---
 
 ### Configuration
 This CLI can use config files to load options to feed into the SheepIt jar. These config options include most of the jar's command line options, plus options for logging and specifying paths.
 
 The CLI will search for a config file both in your home directory (I.E. "/home/you/.sheepit_cli_config") and in your current directory (I.E. "/home/you/your/current/directory/.sheepit_cli_config"), with the current-directory config file's options taking precedence.
+
+Other than the path to the SheepIt jar file, all of these options are optional.
 
 These are the current config options. (Where "Default" is not listed, option falls through to SheepIt's default)
 
@@ -36,4 +40,10 @@ server=[address]
 
 If you're wondering about the password, this CLI will always prompt with an obfuscated field so that your password never has to be stored.
 
+---
+
 Happy rendering, I hope this CLI saves you as much headache as it saves me!
+
+My SheepIt profile: [imhelbling](https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling)
+
+**Coming soon:** easy installation

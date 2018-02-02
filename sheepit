@@ -5,10 +5,25 @@
 
 version='0.1.0'
 
-echo "Thank you for using Isaac Helbling's SheepIt CLI!"
-echo Version: $version
-echo ''
+BOLD='\033[1m'
+RESET_BOLD='\033[21m'
+UNDERLINE='\033[4m'
+RESET_UNDERLINE='\033[24m'
 
+CYAN='\033[36m'
+LIGHT_CYAN='\033[96m'
+RESET_STYLE='\033[0m'
+
+PROMPT_STYLE='\e[97m\e[7m\e[1m'
+RESET_PROMPT='\e[0m'
+
+echo ''
+echo -e "${LIGHT_CYAN}Thank you for using Isaac Helbling's SheepIt CLI v${version}!${RESET_STYLE}"
+echo ''
+# echo Version: $version
+echo -e "${CYAN}    Source code: ${UNDERLINE}https://github.com/isaachelbling/sheepit-cli"${RESET_STYLE}
+echo -e "${CYAN}SheepIt Profile: ${UNDERLINE}https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling"${RESET_STYLE}
+echo ''
 
 
 # Set defaults
@@ -18,7 +33,7 @@ pass=''
 jar_path=$HOME/bin/sheepit-client-5.590.2883.jar
 if [ ! -z $jar_path ]
 then
-  echo '       'SheepIt Jar: $jar_path
+  echo -e $BOLD'       'SheepIt Jar:${RESET_STYLE} $jar_path
 fi
 
 # Overwrite with user-specified values
@@ -32,91 +47,91 @@ source $HOME/.sheepit_cli_config
 cache_dir_option=''
 if [ ! -z $cache_dir ]
 then
-  echo '   'Cache Directory: $cache_dir
+  echo -e $BOLD'   'Cache Directory:${RESET_STYLE} $cache_dir
   cache_dir_option="-cache-dir ${cache_dir}"
 fi
 
 compute_method_option=''
 if [ ! -z $compute_method ]
 then
-  echo '    'Compute Method: $compute_method
+  echo -e $BOLD'    'Compute Method:${RESET_STYLE}${RESET_STYLE} $compute_method
   compute_method="-compute-method ${compute_method}"
 fi
 
 config_option=''
 if [ ! -z $config ]
 then
-  echo ''Configuration File: $config
+  echo -e $BOLD''Configuration File:${RESET_STYLE} $config
   config_option="-config ${config}"
 fi
 
 cores_option=''
 if [ ! -z $cores ]
 then
-  echo '             'Cores: $cores
+  echo -e $BOLD'             'Cores:${RESET_STYLE} $cores
   cores_option="-cores ${cores}"
 fi
 
 extras_option=''
 if [ ! -z $extras ]
 then
-  echo '            'Extras: $extras
+  echo -e $BOLD'            'Extras:${RESET_STYLE} $extras
   extras_option="-extras ${extras}"
 fi
 
 gpu_option=''
 if [ ! -z $gpu ]
 then
-  echo '               'GPU: $gpu
+  echo -e $BOLD'               'GPU:${RESET_STYLE} $gpu
   gpu_option="-gpu ${gpu}"
 fi
 
 memory_option=''
 if [ ! -z $memory ]
 then
-  echo '            'Memory: $memory
+  echo -e $BOLD'            'Memory:${RESET_STYLE} $memory
   memory_option="-memory ${memory}"
 fi
 
 priority_option=''
 if [ ! -z $priority ]
 then
-  echo '          'Priority: $priority
+  echo -e $BOLD'          'Priority:${RESET_STYLE} $priority
   priority_option="-priority ${priority}"
 fi
 
 proxy_option=''
 if [ ! -z $proxy ]
 then
-  echo '             'Proxy: $proxy
+  echo -e $BOLD'             'Proxy:${RESET_STYLE} $proxy
   proxy_option="-proxy ${proxy}"
 fi
 
 rendertime_option=''
 if [ ! -z $rendertime ]
 then
-  echo '       'Render Time: $rendertime
+  echo -e $BOLD'       'Render Time:${RESET_STYLE} $rendertime
   rendertime_option="-rendertime ${rendertime}"
 fi
 
 request_time_option=''
 if [ ! -z $request_time ]
 then
-  echo '      'Request Time: $request_time
+  echo -e $BOLD'      'Request Time:${RESET_STYLE} $request_time
   request_time_option="-request-time ${request_time}"
 fi
 
 server_option=''
 if [ ! -z $server ]
 then
-  echo '            'Server: $server
+  echo -e $BOLD'            'Server:${RESET_STYLE} $server
   server_option="-server ${server}"
 fi
 
 ui_option=''
 if [ ! -z $ui ]
 then
-  echo '                'UI: $ui
+  echo -e $BOLD'                'UI:${RESET_STYLE} $ui
   ui_option="-ui ${ui}"
 fi
 
@@ -124,21 +139,20 @@ fi
 user_option=''
 if [ ! -z $user ]
 then
-  echo '          'Username: $user
-  user_option="-login ${user}"
+  echo -e $BOLD'          'Username:${RESET_STYLE} $user
   echo ''
 else
   echo ''
-  printf 'Username: '
+  printf "${PROMPT_STYLE}USERNAME:${RESET_PROMPT} "
   read user
 fi
+user_option="-login ${user}"
 
 # Prompt password
-printf 'Password: '
+printf "${PROMPT_STYLE}PASSWORD:${RESET_PROMPT} "
 read -s pass
 pass_option="-password ${pass}"
-
-
+echo -e "\n"
 
 # Concat options
 options=''

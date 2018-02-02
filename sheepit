@@ -25,6 +25,8 @@ echo -e "${CYAN}    Source code: ${UNDERLINE}https://github.com/isaachelbling/sh
 echo -e "${CYAN}SheepIt Profile: ${UNDERLINE}https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling"${RESET_STYLE}
 echo ''
 
+log_path="sheepit_$(date +%Y-%m-%d-%H-%M-%S).log"
+echo $log_path
 
 # Set defaults
 ui='text'
@@ -171,5 +173,30 @@ options+=$request_time_option' '
 options+=$server_option' '
 options+=$ui_option' '
 
+
+
 # Start SheepIt
-java -jar $jar_path $options
+
+if $logging
+then
+  echo -e "${LIGHT_CYAN}Starting SheepIt...${RESET_STYLE}"
+  options+='-ui text'
+  echo "Logging enabled, setting UI to 'text'"
+
+  log_path="${log_dir}/sheepit_$(date +%Y-%m-%d-%H-%M-%S).log"
+  echo "Logging to ${log_path}"
+
+  # Make sure log dir exists
+  if [ ! -d $log_dir ]
+  then
+    echo "  ${log_dir} does not exist, creating it."
+    mkdir $log_dir
+  fi
+
+  echo ''
+  java -jar $jar_path $options | tee $log_path
+else
+  echo -e "${LIGHT_CYAN}Starting SheepIt...${RESET_STYLE}"
+  echo ''
+  java -jar $jar_path $options
+fi

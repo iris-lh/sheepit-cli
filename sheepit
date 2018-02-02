@@ -1,0 +1,135 @@
+#!/bin/bash
+
+version='0.1.0'
+
+echo "Thank you for using Isaac Helbling's SheepIt CLI!"
+echo Version: $version
+echo ''
+
+# Set defaults
+ui='text'
+user=''
+pass=''
+jar_path=$HOME/bin/sheepit-client-5.590.2883.jar
+if [ ! -z $jar_path ]
+then
+  echo '       'SheepIt Jar: $jar_path
+fi
+
+# Overwrite with user-specified values
+source ./sheepit_config.sh
+
+# Initialize option variables
+
+cache_dir_option=''
+if [ ! -z $cache_dir ]
+then
+  echo '   'Cache Directory: $cache_dir
+  cache_dir_option="-cache-dir ${cache_dir}"
+fi
+
+compute_method_option=''
+if [ ! -z $compute_method ]
+then
+  echo '    'Compute Method: $compute_method
+  compute_method="-compute-method ${compute_method}"
+fi
+
+config_option=''
+if [ ! -z $config ]
+then
+  echo ''Configuration File: $config
+  config_option="-config ${config}"
+fi
+
+cores_option=''
+if [ ! -z $cores ]
+then
+  echo '             'Cores: $cores
+  cores_option="-cores ${cores}"
+fi
+
+extras_option=''
+if [ ! -z $extras ]
+then
+  echo '            'Extras: $extras
+  extras_option="-extras ${extras}"
+fi
+
+gpu_option=''
+if [ ! -z $gpu ]
+then
+  echo '               'GPU: $gpu
+  gpu_option="-gpu ${gpu}"
+fi
+
+memory_option=''
+if [ ! -z $memory ]
+then
+  echo '            'Memory: $memory
+  memory_option="-memory ${memory}"
+fi
+
+priority_option=''
+if [ ! -z $priority ]
+then
+  echo '          'Priority: $priority
+  priority_option="-priority ${priority}"
+fi
+
+proxy_option=''
+if [ ! -z $proxy ]
+then
+  echo '             'Proxy: $proxy
+  proxy_option="-proxy ${proxy}"
+fi
+
+rendertime_option=''
+if [ ! -z $rendertime ]
+then
+  echo '       'Render Time: $rendertime
+  rendertime_option="-rendertime ${rendertime}"
+fi
+
+request_time_option=''
+if [ ! -z $request_time ]
+then
+  echo '      'Request Time: $request_time
+  request_time_option="-request-time ${request_time}"
+fi
+
+server_option=''
+if [ ! -z $server ]
+then
+  echo '            'Server: $server
+  server_option="-server ${server}"
+fi
+
+ui_option=''
+if [ ! -z $ui ]
+then
+  echo '                'UI: $ui
+  ui_option="-ui ${ui}"
+fi
+
+
+
+# Check username, prompt if none
+if [ ! -z $user ]
+then
+  echo '          'Username: $user
+  echo ''
+else
+  echo ''
+  printf 'Username: '
+  read user
+fi
+
+# Get password
+printf 'Password: '
+read -s pass
+
+
+
+# Start Sheepit
+# java -jar ~/$HOME/bin/sheepit-client-5.590.2883.jar -login $user -password $pass

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# TODO dependency checking
+# TODO validation for certain options
+
 version='0.1.0'
 
 echo "Thank you for using Isaac Helbling's SheepIt CLI!"
@@ -19,7 +22,8 @@ then
 fi
 
 # Overwrite with user-specified values
-source ./sheepit_config.sh
+# TODO check for config in current dir, and check if files exist
+source $HOME/.sheepit_cli_config
 
 
 

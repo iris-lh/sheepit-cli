@@ -1,0 +1,23 @@
+# Save at
+# /home/you/.sheepit_cli_config
+# OR
+# /home/you/your/current/directory/.sheepit_cli_config
+# Uses bash syntax. Remove #'s to uncomment fields.
+
+# jar_path=$HOME/sheepit_cli/sheepit-client-5.590.2883.jar  # [path]
+# log_dir=$HOME/.sheepit_logs                               # [dir]
+# logging=false                                             # [true|false]
+# login=                                                    # (prompt)
+# ui=text                                                   # ['text'|'oneLine'|'swing']
+# cache_dir=                                                # [dir]
+# compute_method=                                           # [cpu|gpu|cpu_gpu]
+# cores=                                                    # [integer]
+# config=                                                   # [path] (not to be confused with the CLI's config!)
+# extras=                                                   # [value]
+# gpu=                                                      # [gpu_name]
+# memory=                                                   # [megabytes]
+# priority=                                                 # [-19 to 19]
+# proxy=                                                    # [address]
+# rendertime=                                               # [minutes]
+# request_time=                                             # [time]
+# server=                                                   # [address]

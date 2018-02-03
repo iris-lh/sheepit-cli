@@ -26,7 +26,7 @@ These are the current config options. (Where "Default" is not listed, option fal
 # OR
 # /home/you/your/current/directory/.sheepit_cli_config
 
-jar_path=<path>                   # Default: $HOME/bin/sheepit-client-5.590.2883.jar (Required! Default is a last resort.)
+jar_path=<path>                   # Installation sets this to $HOME/sheepit_cli/sheepit-client-5.590.2883.jar
 log_dir=[path]                    # Default: $HOME/.sheepit_logs
 logging=[true|false]              # Default: false
 login=[username]                  # Default: (prompt)

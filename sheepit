@@ -1,5 +1,9 @@
 #!/bin/bash
 
+MY_PATH="`( cd \"$(dirname \"$0\")\" && pwd )`"
+
+echo $MY_PATH
+
 version='0.1.0'
 
 BOLD='\033[1m'
@@ -25,7 +29,7 @@ echo ''
 
 
 # Set defaults
-jar_path=$HOME/bin/sheepit-client-5.590.2883.jar
+jar_path=$MY_PATH/sheepit-client-5.590.2883.jar
 home_config="${HOME}/.sheepit_cli_config"
 local_config="${PWD}/.sheepit_cli_config"
 log_dir=$HOME/.sheepit_logs

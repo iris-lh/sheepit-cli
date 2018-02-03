@@ -18,31 +18,32 @@ The CLI will search for a config file both in your home directory (I.E. "/home/y
 
 Other than the path to the SheepIt jar file, all of these options are optional.
 
-What follows is the config file format and the available fields. (Where "Default" is not listed, option falls through to SheepIt's default)
+What follows is the config file format and the available fields. (Where default value is not listed, option falls through to SheepIt's default)
 
 ```
 # Save at
 # /home/you/.sheepit_cli_config
 # OR
 # /home/you/your/current/directory/.sheepit_cli_config
+# Uses bash syntax. Remove #'s to uncomment fields.
 
-jar_path=<path>                   # Installer sets this to $HOME/sheepit_cli/sheepit-client-5.590.2883.jar
-log_dir=[path]                    # Default: $HOME/.sheepit_logs
-logging=[true|false]              # Default: false
-login=[username]                  # Default: (prompt)
-ui=['text'|'oneLine'|'swing']     # Default: 'text'
-cache_dir=[path]
-compute_method=[cpu|gpu|cpu_gpu]
-cores=[integer]
-config=[path]                     # not to be confused with the CLI's config!
-extras=[value]                    
-gpu=[gpu_name]                    
-memory=[megabytes]
-priority=[-19 to 19]
-proxy=[address]
-rendertime=[minutes]
-request_time=[time]
-server=[address]
+# jar_path=$HOME/sheepit_cli/sheepit-client-5.590.2883.jar  # [path]                   
+# log_dir=$HOME/.sheepit_logs                               # [dir]   
+# logging=false                                             # [true|false]
+# login=                                                    # (prompt)
+# ui=text                                                   # ['text'|'oneLine'|'swing']
+# cache_dir=                                                # [path]
+# compute_method=                                           # [cpu|gpu|cpu_gpu]
+# cores=                                                    # [integer]
+# config=                                                   # [path] (not to be confused with the CLI's config!)
+# extras=                                                   # [value]                    
+# gpu=                                                      # [gpu_name]                    
+# memory=                                                   # [megabytes]
+# priority=                                                 # [-19 to 19]
+# proxy=                                                    # [address]
+# rendertime=                                               # [minutes]
+# request_time=                                             # [time]
+# server=                                                   # [address]
 ```
 
 If you're wondering about the password, this CLI will always prompt with an obfuscated field so that your password never has to be stored.

@@ -4,6 +4,13 @@ This command line interface makes it easy and painless to run the [SheepIt Rende
 
 ---
 
+### Installation
+Copy this command and paste it into your terminal:
+
+`curl https://raw.githubusercontent.com/isaachelbling/sheepit-cli/master/install.sh | bash`
+
+---
+
 ### Configuration
 This CLI can use config files to load options to feed into the SheepIt jar. These config options include most of the jar's command line options, plus options for logging and specifying paths.
 

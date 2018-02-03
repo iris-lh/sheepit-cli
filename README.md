@@ -18,7 +18,7 @@ The CLI will search for a config file both in your home directory (I.E. "/home/y
 
 Other than the path to the SheepIt jar file, all of these options are optional.
 
-These are the current config options. (Where "Default" is not listed, option falls through to SheepIt's default)
+What follows is the config file format and the available fields. (Where "Default" is not listed, option falls through to SheepIt's default)
 
 ```
 # Save at
@@ -26,7 +26,7 @@ These are the current config options. (Where "Default" is not listed, option fal
 # OR
 # /home/you/your/current/directory/.sheepit_cli_config
 
-jar_path=<path>                   # Installation sets this to $HOME/sheepit_cli/sheepit-client-5.590.2883.jar
+jar_path=<path>                   # Installer sets this to $HOME/sheepit_cli/sheepit-client-5.590.2883.jar
 log_dir=[path]                    # Default: $HOME/.sheepit_logs
 logging=[true|false]              # Default: false
 login=[username]                  # Default: (prompt)

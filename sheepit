@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# TODO dependency checking
-# TODO validation for certain options
+# TODO (x.0.0) change 'user' option to 'login', mirroring sheepit jar's options
+# TODO (0.x.0) dependency checking
+# TODO (0.x.0) value validation for certain options
+# TODO (0.x.0) log overwrite mode?
+# TODO (0.0.x) check if local_config is the same path as home_config
 
 version='0.1.0'
 

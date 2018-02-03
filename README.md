@@ -32,7 +32,7 @@ What follows is the config file format and the available fields. (Where default 
 # logging=false                                             # [true|false]
 # login=                                                    # (prompt)
 # ui=text                                                   # ['text'|'oneLine'|'swing']
-# cache_dir=                                                # [path]
+# cache_dir=                                                # [dir]
 # compute_method=                                           # [cpu|gpu|cpu_gpu]
 # cores=                                                    # [integer]
 # config=                                                   # [path] (not to be confused with the CLI's config!)

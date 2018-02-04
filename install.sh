@@ -2,7 +2,7 @@ git_path=$(which git)
 bin_is_in_path=$(echo "$PATH"|grep -q $HOME/bin && echo true)
 
 install_dir="${HOME}/sheepit-cli"
-config_path="${HOME}/.sheepit_cli_config"
+config_path="${HOME}/.sheepit-cli.conf"
 
 cli_name='sheepit'
 jar_name='sheepit-client-5.590.2883.jar'

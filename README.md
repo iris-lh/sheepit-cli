@@ -61,7 +61,4 @@ I hope this CLI saves you as much headache as it saves me. :blush:
 My SheepIt profile: [imhelbling](https://www.sheepit-renderfarm.com/account.php?mode=profile&login=imhelbling)
 
 **Coming soon:**
-- option validation
-- dependency checking
-- more logging options
 - easy updating

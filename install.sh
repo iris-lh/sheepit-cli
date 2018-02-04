@@ -17,23 +17,23 @@ config_example_url="https://raw.githubusercontent.com/isaachelbling/sheepit-cli/
 if [ ! $git_path = '' ]
 then
   echo "Found Git at ${git_path}."
-  
+
   echo "Cloning from: ${repo_url}"
-  git clone $repo_url $install_dir
+  git clone "${repo_url}" "${install_dir}"
 else
   echo "Git not found, falling back on curl..."
 
   echo "Source: $cli_url"
-  curl -o ${cli_url} "${install_dir}/${cli_name}"
+  curl -o "${cli_url}" "${install_dir}/${cli_name}"
 
   echo "Source: $readme_url"
-  curl -o ${readme_url} "${install_dir}/README.md"
+  curl -o "${readme_url}" "${install_dir}/README.md"
 
   echo "Source: $jar_url"
-  curl -o ${jar_url} "${install_dir}/${jar_name}"
+  curl -o "${jar_url}" "${install_dir}/${jar_name}"
 
   echo "Source: $config_example_url"
-  curl -o ${config_example_url} "${install_dir}/config_example"
+  curl -o "${config_example_url}" "${install_dir}/config_example"
 fi
 
 if [ -e $config_path ]
@@ -41,12 +41,12 @@ then
   echo "Found config file at ${config_path}"
 else
   echo "Creating config file at ${config_path}/..."
-  echo "Source: $config_example_url"
-  curl -o $config_example_url $config_path
+  echo "Source: ${config_example_url}"
+  curl -o "${config_example_url}" "${config_path}"
 fi
 
 if [ ! $bin_is_in_path = '' ]
 then
   echo "Creating symbolic link to CLI in ${HOME}/bin..."
-  ln -s $install_dir/$cli_name $HOME/bin/$cli_name
+  ln -s "${install_dir}/${cli_name}" "${HOME}/bin/${cli_name}"
 fi

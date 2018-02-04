@@ -39,12 +39,14 @@ echo ''
 
 # Set defaults
 jar_path=$(get_script_dir)/sheepit-client-5.590.2883.jar
-home_config="${HOME}/.sheepit_cli_config"
-local_config="${PWD}/.sheepit_cli_config"
-log_dir=$HOME/.sheepit_logs
+home_config="${HOME}/.sheepit-cli.conf"
+local_config="${PWD}/.sheepit-cli.conf"
+
+log_dir="${HOME}/.sheepit-logs"
+logging=false
 
 ui='text'
-user=''
+login=''
 pass=''
 cache_dir=''
 compute_method=''
@@ -60,7 +62,7 @@ request_time=''
 server=''
 
 ui_option=''
-user_option=''
+login_option=''
 pass_option=''
 cache_dir_option=''
 compute_method_option=''
@@ -192,17 +194,17 @@ then
 fi
 
 # Check username, prompt if none
-user_option=''
-if [ ! -z $user ]
+login_option=''
+if [ ! -z $login ]
 then
-  echo -e $BOLD'          'Username:${RESET_STYLE} $user
+  echo -e $BOLD'          'Username:${RESET_STYLE} $login
   echo ''
 else
   echo ''
   printf "${PROMPT_STYLE}USERNAME:${RESET_PROMPT} "
-  read user
+  read login
 fi
-user_option="-login ${user}"
+login_option="-login ${login}"
 
 # Prompt password
 printf "${PROMPT_STYLE}PASSWORD:${RESET_PROMPT} "
@@ -212,7 +214,7 @@ echo -e "\n"
 
 # Concat options
 options=''
-options+=$user_option' '
+options+=$login_option' '
 options+=$pass_option' '
 options+=$cache_dir_option' '
 options+=$compute_method_option' '

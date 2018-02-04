@@ -18,7 +18,7 @@ if [ ! $git_path = '' ]
 then
   echo "Found Git at ${git_path}."
 
-  echo "Cloning from: ${repo_url}"
+  echo "Cloning from ${repo_url}"
   git clone "${repo_url}" "${install_dir}"
 else
   echo "Git not found, falling back on curl..."

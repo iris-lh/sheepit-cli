@@ -28,8 +28,13 @@ else
   curl -o ${config_example_url} "${install_dir}/config_example"
 fi
 
-echo 'Adding SheepIt jar path to CLI config...'
-echo "jar_path=${install_dir}/${jar_name}" >> $config_path
+if [ -e $config_path ]
+then
+  echo "Found config file at ${config_path}"
+else
+  echo "Creating config file at ${config_path}/..."
+  curl -o $config_example_url $config_path
+fi
 
 if [ ! $bin_is_in_path = '' ]
 then

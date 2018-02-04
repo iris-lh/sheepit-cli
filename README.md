@@ -64,3 +64,4 @@ My SheepIt profile: [imhelbling](https://www.sheepit-renderfarm.com/account.php?
 - option validation
 - dependency checking
 - more logging options
+- easy updating

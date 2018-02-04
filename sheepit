@@ -13,7 +13,7 @@ get_script_dir () {
      echo "$DIR"
 }
 
-version='0.1.0'
+version='1.0.0'
 
 BOLD='\033[1m'
 RESET_BOLD='\033[21m'

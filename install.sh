@@ -14,8 +14,6 @@ jar_url="https://raw.githubusercontent.com/isaachelbling/sheepit-cli/master/${ja
 config_example_url='https://raw.githubusercontent.com/isaachelbling/sheepit-cli/master/config_example'
 
 
-touch $install_dir $config_path
-
 if [ ! $git_path = '' ]
 then
   echo "Found Git at ${git_path}."

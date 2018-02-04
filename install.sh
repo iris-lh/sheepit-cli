@@ -42,7 +42,7 @@ then
 else
   echo "Creating config file at ${config_path}/..."
   echo "Source: ${config_example_url}"
-  curl -o "${config_example_url}" "${config_path}"
+  curl "${config_example_url}" > "${config_path}"
 fi
 
 if [ ! $bin_is_in_path = '' ]

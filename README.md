@@ -9,6 +9,8 @@ Copy this command and paste it into your terminal:
 
 `curl https://raw.githubusercontent.com/isaachelbling/sheepit-cli/master/install.sh | bash`
 
+Then, simply type `sheepit` to start the CLI.
+
 ---
 
 ### Configuration
